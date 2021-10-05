@@ -7,10 +7,10 @@ C381<-read.delim("C:/Users/thies/Downloads/PMABM000HGC_PMCRZ010BLU_RNA-Seq.gene_
 C381<-C381[,!names(C381)=="SJAMLM7011235_D1"]
 
 #this is the annotation data
-data2<-read.delim("~/Dropbox/coclusteringremote/coclusteringfile1.txt")
+data2<-read.delim("C:/Users/thies/Downloads/PMABM000HGC_PMCRZ010BLU_RNA-Seq.gene_id.exon.counts.txt/coclusteringfile1.txt")
 
 #this is the color data
-COL<-read.delim("~/Dropbox/coclusteringremote/coclusteringfile3.txt")
+COL<-read.delim("C:/Users/thies/Downloads/PMABM000HGC_PMCRZ010BLU_RNA-Seq.gene_id.exon.counts.txt/coclusteringfile3.txt")
 
 #this is a to-be-tested sample
 J<-read.delim("~/Dropbox/NKD local/miniRetreat/ETPALL/TARGET/mini2/Remove2/controlcohort/coclustering/Judith/PMABM000HGC_PMCRZ010BLU_RNA-Seq.gene_id.exon.counts.txt", skip=3)

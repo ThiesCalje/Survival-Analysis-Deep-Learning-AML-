@@ -1,7 +1,10 @@
 ##RNAseq classifier
 
 library(tsne)
+library(readxl)
+library(writexl)
 
+write_xlsx(Data10,"C:/Users/thies/Google Drive/TU Delft/BEP/Survival-Analysis-Deep-Learning-AML-/Data/file.xlsx")
 
 C381<-read.delim("C:/Users/thies/Downloads/PMABM000HGC_PMCRZ010BLU_RNA-Seq.gene_id.exon.counts.txt/Cohort436_Classifier381Genes20191213_annot.txt")
 C381<-C381[,!names(C381)=="SJAMLM7011235_D1"]

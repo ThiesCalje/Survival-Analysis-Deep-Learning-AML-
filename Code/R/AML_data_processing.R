@@ -17,6 +17,13 @@ Table_10 <- read_excel("C:/Users/thies/Google Drive/TU Delft/BEP/Data/Table 10.x
                                      "numeric", "numeric", "text", "text", 
                                      "numeric", "numeric", "numeric", "text", 
                                      "text", "text"))
+Table_10 <- read_excel("G:/Mijn Drive/TU Delft/BEP/Survival-Analysis-Deep-Learning-AML-/Data/Table 10.xlsx", 
+                       col_types = c("text", "text", "text", 
+                                     "text", "text", "text", "text", "text", 
+                                     "text", "text", "numeric", "numeric", 
+                                     "numeric", "numeric", "numeric", 
+                                     "text", "text", "numeric", "numeric", 
+                                     "numeric", "text", "text", "text"))
 
 Data10 <- Table_10[c(1,2,3,4,5,7,9,10,11,12,13,14,15,16,17,18,19,20,21,22)]
 Data0 <- subset(Data10, Survival_Days == 0)
@@ -25,7 +32,7 @@ Data10 <- rbind(Data10,Data0)
 Data10['Vital_Status'] <-replace(Data10['Vital_Status'], Data10['Vital_Status']== 'Alive','0')
 Data10['Vital_Status'] <-replace(Data10['Vital_Status'], Data10['Vital_Status']== 'Deceased','1')
 Data10['Vital_Status'] <- as.integer(Data10$Vital_Status)
-Data10['Key_Oncogenic_Driver_Event'] <-replace(Data10['Key_Oncogenic_Driver_Event'], Data10['Key_Oncogenic_Driver_Event']== 'Other'| Data10['Key_Oncogenic_Driver_Event']== 'Unknown','NA')
+#Data10['Key_Oncogenic_Driver_Event'] <-replace(Data10['Key_Oncogenic_Driver_Event'], Data10['Key_Oncogenic_Driver_Event']== 'Other'| Data10['Key_Oncogenic_Driver_Event']== 'Unknown','NA')
 Data10['FAB_Designation'] <-replace(Data10['FAB_Designation'], Data10['FAB_Designation']== 'Unknown','NA')
 Data10['Treatment_Protocol'] <- replace(Data10['Treatment_Protocol'], Data10['Treatment_Protocol'] == 'Not Reported', 'NA')
 Data10['Treatment_FLT3_Inhibitor'] <- replace(Data10['Treatment_FLT3_Inhibitor'], Data10['Treatment_FLT3_Inhibitor'] == 'Not Reported', 'NA')
@@ -57,4 +64,4 @@ Data_FAB_competing_risk <- subset(Data_competing_risk, FAB_Designation != 'NA' &
 Data_FAB_SCT <- subset(Data_SCT, FAB_Designation != 'NA' & FAB_Designation != 'Unknown' & FAB_Designation != 'UKN')
 Data_FAB_SCT_competing_risk <- subset(Data_SCT_competing_risk, FAB_Designation != 'NA' & FAB_Designation != 'Unknown' & FAB_Designation != 'UKN')
 
-write_xlsx(Data10,"C:/Users/thies/Google Drive/TU Delft/BEP/Data/Data_10_processed.xlsx")
+write_xlsx(Data10,"G:/Mijn Drive/TU Delft/BEP/Survival-Analysis-Deep-Learning-AML-/Data/Data_10_processed.xlsx")

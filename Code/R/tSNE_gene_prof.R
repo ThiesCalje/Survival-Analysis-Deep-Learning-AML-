@@ -7,9 +7,11 @@ library(writexl)
 write_xlsx(Data10,"C:/Users/thies/Google Drive/TU Delft/BEP/Survival-Analysis-Deep-Learning-AML-/Data/file.xlsx")
 write_xlsx(C381, "G:/Mijn Drive/TU Delft/BEP/Survival-Analysis-Deep-Learning-AML-/Data/Data_10_genex.xlsx")
 write_xlsx(genes, "G:/Mijn Drive/TU Delft/BEP/Survival-Analysis-Deep-Learning-AML-/Data/Data_10_genex_names.xlsx")
-
+write_xlsx(lut, "G:/Mijn Drive/TU Delft/BEP/Survival-Analysis-Deep-Learning-AML-/Data/Genename_lut.xlsx")
 gene_names = row.names(C381)
 genes = data.frame(gene_names)
+
+lut <-read.delim("C:/Users/thies/Downloads/mart_export.txt")
 
 C381<-read.delim("C:/Users/thies/Downloads/PMABM000HGC_PMCRZ010BLU_RNA-Seq.gene_id.exon.counts.txt/Cohort436_Classifier381Genes20191213_annot.txt")
 C381<-C381[,!names(C381)=="SJAMLM7011235_D1"]
